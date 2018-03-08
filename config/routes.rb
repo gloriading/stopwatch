@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :records do
-    resources :laps
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :records
+    end
   end
+
+  # resources :records do
+  #   resources :laps
+  # end
+
+
 end
