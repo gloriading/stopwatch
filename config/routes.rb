@@ -4,13 +4,12 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :records
+      resources :records do
+        resources :laps
+      end
     end
   end
 
-  # resources :records do
-  #   resources :laps
-  # end
 
 
 end
