@@ -8,7 +8,7 @@
          target="_blank"
          class="btn btn-light btn-block btn-profile">Linkedin</a>
       <a href="https://github.com/gloriading"
-         target="_blank" 
+         target="_blank"
          class="btn btn-light btn-block btn-profile">Github</a>
     </div>
   </div>
@@ -36,6 +36,7 @@
 <script type="text/javascript">
 let laptime, lapcount = 0, firstClickOnStart = true;
 let startTime, endTime;
+let lapClick = [];
 
 function timeFormatter(timeInMilliSeconds) {
   let time = new Date(timeInMilliSeconds);
@@ -104,6 +105,7 @@ function stopWatch(ele){
       firstClickOnStart = true;
       startTime = null;
       endTime = null;
+      lapClick = [];
     }
   }
 
@@ -140,8 +142,16 @@ toggleBtn.addEventListener('click', function(){
 resetBtn.addEventListener('click', function(){
   endTime = timeFormatter(Date.now());
  records.create({start_time: startTime, end_time: endTime})
-        .then(result=> {
-         console.log(result);
+        .then(newRecord => {
+         console.log(newRecord);
+         if(lapClick.length > 0){
+           for(let elem of lapClick){
+             laps.create({lap_time: elem, record: newRecord})
+                 .then(result => {
+                   console.log(result);
+                 })
+           }
+         }
         })
   setTimeout(function(){
       watch.reset();
@@ -152,6 +162,8 @@ resetBtn.addEventListener('click', function(){
 
 lapBtn.addEventListener('click', function(){
   if(watch.isOn){
+    let tempLap = timeFormatter(Date.now());
+    lapClick.push(tempLap);
     lapcount ++;
     if(lapcount < 10){ lapcount = '0' + lapcount };
     const newLapTime = document.createElement('p');

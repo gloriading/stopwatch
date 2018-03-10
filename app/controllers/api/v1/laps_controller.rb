@@ -2,11 +2,11 @@ class Api::V1::LapsController < Api::ApplicationController
 
   def create
     lap = Lap.new lap_params
-    # lap.record = 
+    lap.record = record
     if lap.save
-      render json: record
+      render json: lap
     else
-      render json: { error: record.errors.full_messages}
+      render json: { error: lap.errors.full_messages}
     end
   end
 
