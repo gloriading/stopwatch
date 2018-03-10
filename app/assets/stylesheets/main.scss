@@ -5,11 +5,46 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  height: 100%;
 }
 
-.container {
+.container-fluid {
+  padding-top: 2em;
+  padding-left: 1em;
+  height: 100%;
   text-align: center;
+  background-color: yellow;
+}
+
+#profile {
+  text-align: left;
+  span {
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: Helvetica, Arial;
+    letter-spacing: 2px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #profileBox {
+    display: none;
+    width: 300px;
+    height: 250px;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px gray;
+    position: absolute;
+    z-index: 999;
+    overflow: auto;
+    .btn-profile {
+      margin-top: 5px;
+      letter-spacing: 2px;
+    }
+  }
 }
 
 #header {
@@ -17,6 +52,13 @@ html, body {
   line-height: 200px;
 }
 
-button {
-  letter-spacing: 1px;
+#controls {
+  margin-top: 1em;
+  button {
+    letter-spacing: 1px;
+  }
+  #reset, #lap {
+    display: none;
+  }
+
 }

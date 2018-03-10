@@ -15,3 +15,15 @@
 //= require bootstrap
 //= require rails-ujs
 //= require_tree .
+$( document ).ready(function() {
+    console.log( "ready!" );
+  $('#profile span').click(function(e){
+    e.stopPropagation();
+  	$('#profileBox').toggle();
+  })
+
+  $(':not(#profile span)').click(function() {
+       $('#profileBox').hide();
+  });
+
+});
