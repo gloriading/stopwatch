@@ -146,7 +146,7 @@ resetBtn.addEventListener('click', function(){
          console.log(newRecord);
          if(lapClick.length > 0){
            for(let elem of lapClick){
-             laps.create({lap_time: elem, record: newRecord})
+             laps.create({lap_time: elem, record_id: newRecord.id})
                  .then(result => {
                    console.log(result);
                  })
