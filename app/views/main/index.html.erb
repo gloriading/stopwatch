@@ -17,7 +17,9 @@
          class="btn btn-light btn-block btn-profile">Github</a>
     </div>
   </div>
-  <h1 id="header">Stopwatch</h1>
+  <h1 id="header">
+    <i class="fas fa-stopwatch fa-3x" id="stopWatchIcon"></i>
+  </h1>
   <div class="row">
     <div class="col-sm-8">
       <div id="watchArea">
@@ -187,6 +189,9 @@ lapBtn.addEventListener('click', function(){
     newLapTime.innerHTML = `${lapTimeTitle} ${laptime}`;
     lapReport.appendChild(newLapTime);
   }
+
+
+
 
 });
 
