@@ -17,12 +17,12 @@
 //= require_tree .
 $( document ).ready(function() {
     console.log( "ready!" );
-  $('#profile span').click(function(e){
+  $('#profile .logo').click(function(e){
     e.stopPropagation();
   	$('#profileBox').toggle();
   })
 
-  $(':not(#profile span)').click(function() {
+  $(':not(#profile .logo)').click(function() {
        $('#profileBox').hide();
   });
 
