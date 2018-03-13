@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
   <div id="profile">
     <%= image_tag("gd.png", class: "logo") %>
     <div id="profileBox">
@@ -17,27 +18,34 @@
     </div>
   </div>
   <h1 id="header">Stopwatch</h1>
-
-  <div id="watchArea">
-    <h1 id="timer" class="display-3">
-      00 : 00. 000
-    </h1>
-    <div id="controls">
-      <button class="btn btn-dark" id="toggle">
-        START
-      </button>
-      <button class="btn btn-dark" id="lap">
-        LAP
-      </button>
-      <button class="btn btn-dark" id="reset">
-        RESET
-      </button>
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="watchArea">
+        <h1 id="timer" class="display-3">
+          00 : 00. 000
+        </h1>
+        <div id="controls">
+          <button class="btn btn-dark" id="toggle">
+            START
+          </button>
+          <button class="btn btn-dark" id="lap">
+            LAP
+          </button>
+          <button class="btn btn-dark" id="reset">
+            RESET
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div id="reportArea">
+        <ul class="list-group" id="lapReport">
+        </ul>
+      </div>
     </div>
   </div>
-  <div id="reportArea">
-    <ul class="list-group" id="lapReport">
-    </ul>
-  </div>
+
+
 </div>
 
 <script type="text/javascript">
@@ -133,7 +141,7 @@ toggleBtn.addEventListener('click', function(){
     watch.stop();
     resetBtn.style.display = 'inline-block';
     lapBtn.style.display = 'none';
-    toggleBtn.textContent = 'Start';
+    toggleBtn.textContent = 'START';
   }else{
     if(firstClickOnStart){
       startTime = timeFormatter(Date.now());
@@ -142,7 +150,7 @@ toggleBtn.addEventListener('click', function(){
     watch.start();
     resetBtn.style.display = 'none';
     lapBtn.style.display = 'inline-block';
-    toggleBtn.textContent = 'Stop';
+    toggleBtn.textContent = 'STOP';
   }
 });
 
