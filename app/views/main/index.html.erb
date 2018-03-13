@@ -34,7 +34,10 @@
       </button>
     </div>
   </div>
-  <div id="lapReport"></div>
+  <div id="reportArea">
+    <ul class="list-group" id="lapReport">
+    </ul>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -170,9 +173,10 @@ lapBtn.addEventListener('click', function(){
     lapClick.push(tempLap);
     lapcount ++;
     if(lapcount < 10){ lapcount = '0' + lapcount };
-    const newLapTime = document.createElement('p');
-    const lapTimeTitle = `[Lap ${lapcount}]`;
-    newLapTime.innerText = `${lapTimeTitle} ${laptime}`;
+    const newLapTime = document.createElement('li');
+    newLapTime.className = 'list-group-item';
+    const lapTimeTitle = `<strong>Lap ${lapcount}</strong> - `;
+    newLapTime.innerHTML = `${lapTimeTitle} ${laptime}`;
     lapReport.appendChild(newLapTime);
   }
 
