@@ -1,27 +1,29 @@
 <div class="container-fluid">
 
-  <div id="profile">
+<div class="row">
+  <div class="col-sm-2">
     <%= image_tag("gd.png", class: "logo") %>
-    <div id="profileBox">
-      <p>
-        <span id="waving"><i class="far fa-hand-paper fa-lg"></i></span>
-        Hello. I'm Gloria.
-      </p>
-      <p>A junior web developer in Vancouver, Canada.</p>
-      <p>More about me, please visit:</p>
-      <a href="https://www.linkedin.com/in/gloriading/"
-         target="_blank"
-         class="btn btn-light btn-block btn-profile">Linkedin</a>
-      <a href="https://github.com/gloriading"
-         target="_blank"
-         class="btn btn-light btn-block btn-profile">Github</a>
-    </div>
   </div>
-  <h1 id="header">
-    <i class="fas fa-stopwatch fa-3x" id="stopWatchIcon"></i>
-  </h1>
+  <div class="col-sm-10">
+      <div id="profileBox">
+        <p>
+          <span id="waving"><i class="far fa-hand-paper fa-lg"></i></span>
+          Hello. I'm <strong>Gloria</strong>. A junior web developer in Vancouver, Canada. More about me, please visit:
+        <a href="https://www.linkedin.com/in/gloriading/"
+           target="_blank"><i class="fab fa-linkedin-in fa-lg"></i></a>
+        <a href="https://github.com/gloriading"
+           target="_blank"><i class="fab fa-github fa-lg"></i></a>
+         </p>
+      </div>
+
+  </div>
+
+
+</div>
+
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8" id="watchAreaContainer">
+      <h3 id="stopWatchIcon"><i class="fas fa-stopwatch fa-3x"></i></h3>
       <div id="watchArea">
         <h1 id="timer" class="display-3">
           00 : 00. 000
@@ -39,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" id="reportAreaContainer">
       <div id="reportArea">
         <ul class="list-group" id="lapReport">
         </ul>

@@ -13,6 +13,45 @@ html, body {
   box-shadow: none !important;
 }
 
+.container-fluid {
+  border: 1px dashed green;
+  padding: 0;
+}
+
+.row:first-of-type { height: 10%; }
+.row { height: 90%; }
+
+.logo {
+  margin-left: 10px;
+  height: 30px;
+  width: auto;
+  &:hover {
+    cursor: pointer;
+    height: 40px;
+  }
+}
+
+  #profileBox {
+    display: none;
+    font-size: 1.2em;
+    color: #00008B;
+    a {
+      margin-left: 5px;
+      color: #4169E1;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+#watchAreaContainer {
+  border: 1px black solid;
+}
+
+#reportAreaContainer {
+  border: 1px red solid;
+}
+
 #reportArea {
   margin-top: 10px;
   overflow: scroll;
@@ -40,43 +79,7 @@ html, body {
   background-color: yellow;
 }
 
-.logo {
-  width: 50px;
-  height: auto;
-  box-shadow: 3px 3px 5px white;
-  &:hover {
-    cursor: pointer;
-    transform: rotate(20deg);
-  }
-}
-
-#profile {
-  text-align: left;
-
-  #profileBox {
-    display: none;
-    width: 300px;
-    height: 300px;
-    border: none;
-    font-size: 1.2em;
-    padding: 10px 10px;
-    background-color: rgba(255, 20, 147, 1);
-    color: white;
-    position: absolute;
-    z-index: 999;
-    overflow: auto;
-    .btn-profile {
-      margin-top: 5px;
-      letter-spacing: 2px;
-    }
-    &:hover #waving{
-      font-size: 2em;
-    }
-  }
-
-}
-
-#header {
+#stopWatchIcon {
   line-height: 150px;
 }
 
